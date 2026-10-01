@@ -268,7 +268,7 @@ body.dark-mode .project-summary {
     color: #CBD5E1;
 }
 
-#dark-mode-btn {
+dark-mode-btn {
     position: fixed;
     top: 15px;
     right: 15px;
@@ -286,7 +286,7 @@ body.dark-mode .project-summary {
     font-size: 0.9rem;
 }
 
-#dark-mode-btn:hover {
+dark-mode-btn:hover {
     background-color: #0F766E;
 }
 
