@@ -268,7 +268,7 @@ body.dark-mode .project-summary {
     color: #CBD5E1;
 }
 
-dark-mode-btn {
+#dark-mode-btn {
     position: fixed;
     top: 15px;
     right: 15px;
@@ -284,9 +284,10 @@ dark-mode-btn {
 
     cursor: pointer;
     font-size: 0.9rem;
+    font-weight: bold;
 }
 
-dark-mode-btn:hover {
+#dark-mode-btn:hover {
     background-color: #0F766E;
 }
 
@@ -320,6 +321,8 @@ dark-mode-btn:hover {
     padding: 8px 14px;
 
     cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
 }
 
 .project-btn:hover {
