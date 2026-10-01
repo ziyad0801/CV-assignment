@@ -1,6 +1,7 @@
-/* =========================
+/* =========================================================
    BASIC RESET
-   ========================= */
+   ========================================================= */
+
 * {
     box-sizing: border-box;
 }
@@ -15,6 +16,7 @@ body {
     line-height: 1.6;
     color: #1E293B;
     background-color: #F4F6F8;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 a {
@@ -26,9 +28,11 @@ a:hover {
     text-decoration: underline;
 }
 
-/* =========================
+
+/* =========================================================
    LAYOUT
-   ========================= */
+   ========================================================= */
+
 .container {
     width: min(900px, 90%);
     margin: 0 auto;
@@ -76,9 +80,11 @@ h1 {
     margin: 0 8px;
 }
 
-/* =========================
+
+/* =========================================================
    CV SECTIONS
-   ========================= */
+   ========================================================= */
+
 main {
     padding: 32px 0;
 }
@@ -88,6 +94,7 @@ section {
     margin-bottom: 22px;
     padding: 28px;
     border-radius: 10px;
+    transition: background-color 0.25s ease;
 }
 
 h2 {
@@ -126,11 +133,17 @@ h3 {
     color: #555;
 }
 
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
+
 .skills-grid h3 {
     color: #0D9488;
 }
@@ -143,44 +156,68 @@ address {
     font-style: normal;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #555;
+
+/* =========================================================
+   SKILL INPUTS
+   ========================================================= */
+
+.skill-input {
+    margin-top: 18px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-   Makes the page readable on phones.
-   ========================= */
-@media (max-width: 700px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
+.skill-input input {
+    width: 100%;
+    height: 38px;
+    padding: 8px 12px;
 
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
+    font-family: inherit;
+    font-size: 16px;
 
-    .entry-header {
-        flex-direction: column;
-        gap: 0;
-    }
+    color: #1E293B;
+    background-color: white;
+
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
 }
 
+.skill-input input::placeholder {
+    color: #64748B;
+}
 
-/* Assignment 2 JavaScript Features */
-.welcome-message {
-    background: #0D9488;
+.skill-input input:focus {
+    outline: 2px solid #0D9488;
+    border-color: #0D9488;
+}
+
+.skill-input button {
+    height: 38px;
+    padding: 8px 14px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+
     color: white;
-    padding: 12px;
-    text-align: center;
-    display: none;
+    background-color: #0D9488;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+    white-space: nowrap;
 }
+
+.skill-input button:hover {
+    background-color: #0F766E;
+}
+
+
+/* =========================================================
+   JAVASCRIPT — GENERAL BUTTONS
+   ========================================================= */
 
 .section-header {
     display: flex;
@@ -192,59 +229,39 @@ footer {
 .toggle-btn {
     background-color: #0D9488;
     color: white;
+
     border: none;
-    padding: 8px 14px;
     border-radius: 6px;
-    cursor: pointer;
+
+    padding: 8px 14px;
+
+    font-family: inherit;
     font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    white-space: nowrap;
 }
 
 .toggle-btn:hover {
     background-color: #0F766E;
 }
 
-.toggle-btn, #addSkillBtn, #contactForm button {
-    background: #0D9488;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 10px 0;
-}
-
-.toggle-btn:hover, #addSkillBtn:hover, #contactForm button:hover {
-    opacity: 0.85;
-}
-
-.skill-input {
-    margin-top: 18px;
-    display: flex;
-    gap: 8px;
-}
-
-.skill-input input {
-    width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #CBD5E1;
-    border-radius: 6px;
-    font-size: 0.9rem;
-}
-
-.skill-input button {
+.welcome-message {
     background-color: #0D9488;
     color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-weight: bold;
-    white-space: nowrap;
+
+    padding: 12px;
+
+    text-align: center;
+
+    display: none;
 }
 
-.skill-input button:hover {
-    background-color: #0F766E;
-}
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
 
 #contactForm {
     display: flex;
@@ -253,99 +270,78 @@ footer {
     margin-top: 20px;
 }
 
-#contactForm input, #contactForm textarea, #newSkill {
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+
     padding: 10px;
-    border: 1px solid #ccc;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    color: #1E293B;
+    background-color: white;
+
+    border: 1px solid #CBD5E1;
     border-radius: 6px;
 }
 
 #contactForm textarea {
     min-height: 100px;
+    resize: vertical;
 }
 
-.success {
-    color: green;
-}
-
-.error {
-    color: red;
-}
-
-/* =========================
-   DARK MODE
-   ========================= */
-
-body.dark-mode {
-    background-color: #0F172A;
-    color: #E2E8F0;
-}
-
-body.dark-mode section {
-    background-color: #1E293B;
-}
-
-body.dark-mode h2,
-body.dark-mode h3 {
-    color: #E2E8F0;
-}
-
-body.dark-mode .subheading {
-    color: #CBD5E1;
-}
-
-body.dark-mode .project-details,
-body.dark-mode .project-summary {
-    color: #CBD5E1;
-}
-
-#dark-mode-btn {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1000;
-    background-color: #0D9488;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 9px 14px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-#dark-mode-btn:hover {
-    background-color: #0F766E;
-}
-
-/* Dark mode form fields */
-body.dark-mode input,
-body.dark-mode textarea {
-    background-color: #334155;
-    color: #F1F5F9;
-    border: 1px solid #64748B;
-}
-
-body.dark-mode input::placeholder,
-body.dark-mode textarea::placeholder {
-    color: #CBD5E1;
-}
-
-body.dark-mode input:focus,
-body.dark-mode textarea:focus {
+#contactForm input:focus,
+#contactForm textarea:focus {
     outline: 2px solid #0D9488;
     border-color: #0D9488;
 }
 
-/* =========================
+#contactForm button {
+    width: 100%;
+
+    background-color: #0D9488;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 10px 14px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#contactForm button:hover {
+    background-color: #0F766E;
+}
+
+.success {
+    color: #15803D;
+    font-weight: 600;
+}
+
+.error {
+    color: #DC2626;
+    font-weight: 600;
+}
+
+
+/* =========================================================
    INTERACTIVE PROJECTS
-   ========================= */
+   ========================================================= */
 
 .project-details {
     display: none;
+
     margin-top: 15px;
     padding: 15px;
 
     background-color: #F4F6F8;
+
     border-left: 4px solid #0D9488;
     border-radius: 6px;
 }
@@ -365,11 +361,185 @@ body.dark-mode textarea:focus {
 
     padding: 8px 14px;
 
-    cursor: pointer;
+    font-family: inherit;
     font-size: 0.9rem;
-    font-weight: bold;
+    font-weight: 600;
+
+    cursor: pointer;
 }
 
 .project-btn:hover {
     background-color: #0F766E;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.dark-mode {
+    color: #E2E8F0;
+    background-color: #0F172A;
+}
+
+body.dark-mode section {
+    background-color: #1E293B;
+}
+
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #E2E8F0;
+}
+
+body.dark-mode .skills-grid h3 {
+    color: #5EEAD4;
+}
+
+body.dark-mode .subheading {
+    color: #CBD5E1;
+}
+
+
+/* Dark mode — skill inputs */
+
+body.dark-mode .skill-input input {
+    color: #F1F5F9;
+    background-color: #334155;
+    border-color: #64748B;
+}
+
+body.dark-mode .skill-input input::placeholder {
+    color: #CBD5E1;
+}
+
+
+/* Dark mode — contact form */
+
+body.dark-mode #contactForm input,
+body.dark-mode #contactForm textarea {
+    color: #F1F5F9;
+    background-color: #334155;
+    border-color: #64748B;
+}
+
+body.dark-mode #contactForm input::placeholder,
+body.dark-mode #contactForm textarea::placeholder {
+    color: #CBD5E1;
+}
+
+
+/* Dark mode — project details */
+
+body.dark-mode .project-details {
+    color: #CBD5E1;
+    background-color: #334155;
+}
+
+
+/* Dark mode — links */
+
+body.dark-mode a {
+    color: #5EEAD4;
+}
+
+
+/* Dark mode — success/error messages */
+
+body.dark-mode .success {
+    color: #4ADE80;
+}
+
+body.dark-mode .error {
+    color: #F87171;
+}
+
+
+/* Dark mode button */
+
+#dark-mode-btn {
+    position: fixed;
+
+    top: 15px;
+    right: 15px;
+
+    z-index: 1000;
+
+    background-color: #0D9488;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 9px 14px;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#dark-mode-btn:hover {
+    background-color: #0F766E;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555;
+}
+
+body.dark-mode footer {
+    color: #CBD5E1;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .entry-header {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-btn {
+        width: auto;
+    }
+
+    .skill-input {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .skill-input input,
+    .skill-input button {
+        width: 100%;
+    }
+
+    #dark-mode-btn {
+        top: 10px;
+        right: 10px;
+    }
 }
