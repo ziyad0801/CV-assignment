@@ -171,3 +171,51 @@ footer {
         gap: 0;
     }
 }
+
+/* Assignment 2 JavaScript Features */
+.welcome-message {
+    background: #0D9488;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    display: none;
+}
+
+.toggle-btn, #addSkillBtn, #contactForm button {
+    background: #0D9488;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.toggle-btn:hover, #addSkillBtn:hover, #contactForm button:hover {
+    opacity: 0.85;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+#contactForm input, #contactForm textarea, #newSkill {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#contactForm textarea {
+    min-height: 100px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
