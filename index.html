@@ -8,9 +8,11 @@
 
     <!-- External CSS file required by the assignment -->
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
+<div id="welcomeMessage" class="welcome-message"></div>
 
     <!-- =========================
          HEADER / INTRODUCTION
@@ -25,7 +27,7 @@
 
             <div>
                 <h1>Ziyad Ismail</h1>
-                <p class="professional-title">Student | Human-Technology-Interaction | Designer</p>
+                <p class="professional-title">Student | Human-Technology Interaction | Designer</p>
 
                 <p class="contact-line">
                     <a href="mailto:zismail@aucegypt.edu">E-Mail</a>
@@ -92,6 +94,8 @@
              ========================= -->
         <section id="skills">
             <h2>Skills</h2>
+            <button class="toggle-btn" data-target="skillsContent">Show/Hide Skills</button>
+            <div id="skillsContent">
 
             <div class="skills-grid">
                 <div>
@@ -104,6 +108,8 @@
                         <li>Microsoft Office</li>
                         <li>Usability testing</li>
                     </ul>
+                    <input id="newSkill" type="text" placeholder="Enter skill">
+                    <button id="addSkillBtn" type="button">Add Skill</button>
                 </div>
 
                 <div>
@@ -126,13 +132,22 @@
                     </ul>
                 </div>
             </div>
+            </div>
         </section>
 
         <!-- =========================
              PROJECTS
              ========================= -->
         <section id="projects">
-            <h2>Projects</h2>
+
+            <div class="section-header">
+                <h2>Projects</h2>
+                 <button type="button" class="toggle-btn" data-target="projects-content">
+                    Hide Projects
+                 </button>
+            </div>
+
+    <div id="projects-content">
 
             <article class="entry">
                 <div class="entry-header">
@@ -141,8 +156,10 @@
                 </div>
 
                 <p>
-                    Designed and developed a responsive personal CV website using
-                    semantic HTML and a separate CSS stylesheet.
+                    Designed, developed, and published a responsive personal CV website using 
+                    semantic HTML5 and a separate CSS stylesheet. The site presents my profile, 
+                    education, skills, projects, experience, achievements, and contact details 
+                    in a clear structure optimized for desktop and mobile viewing.
                 </p>
 
                 <p>
@@ -157,11 +174,14 @@
                 </div>
 
                 <p>
-                    Worked in a team to design and develop a software project.
-                    My responsibilities included planning, implementation, testing,
-                    and presenting the final result.
+                    Collaborated in a university team to design and develop a software project focused 
+                    on creative expression. I contributed to project planning, implementation, testing
+                    and the final presentation, while coordinating tasks with team members and iterating 
+                    on the solution based on project requirements.
                 </p>
             </article>
+            
+        </div>
         </section>
 
         <!-- =========================
@@ -191,6 +211,8 @@
              ========================= -->
         <section id="certifications">
             <h2>Certifications &amp; Achievements</h2>
+            <button class="toggle-btn" data-target="certContent">Show/Hide Certifications</button>
+            <div id="certContent">
 
             <ul>
                 <li>Best Technical Excellence Award – Hertie School, 2026</li>
@@ -198,6 +220,7 @@
                 <li>A-level prize in statistics - TU Dortmund, 2023</li>
                 <li>Volunteer tutor supporting and teaching migrant children</li>
             </ul>
+            </div>
         </section>
 
         <!-- =========================
@@ -216,6 +239,20 @@
              ========================= -->
         <section id="contact">
             <h2>Contact</h2>
+
+            <form id="contactForm">
+                <label for="name">Name</label>
+                <input id="name" type="text" required>
+
+                <label for="email">Email</label>
+                <input id="email" type="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+                <p id="formMessage"></p>
+            </form>
 
             <address>
                 <p>
