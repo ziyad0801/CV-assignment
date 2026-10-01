@@ -317,6 +317,25 @@ body.dark-mode .project-summary {
     background-color: #0F766E;
 }
 
+/* Dark mode form fields */
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #334155;
+    color: #F1F5F9;
+    border: 1px solid #64748B;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #CBD5E1;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    outline: 2px solid #0D9488;
+    border-color: #0D9488;
+}
+
 /* =========================
    INTERACTIVE PROJECTS
    ========================= */
