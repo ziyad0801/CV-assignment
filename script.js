@@ -57,3 +57,41 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         result.className = "success";
     }
 });
+
+// =========================
+// DARK MODE
+// =========================
+
+const darkModeButton = document.getElementById("dark-mode-btn");
+
+darkModeButton.addEventListener("click", function() {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        darkModeButton.textContent = "Light Mode";
+    } else {
+        darkModeButton.textContent = "Dark Mode";
+    }
+});
+
+// =========================
+// INTERACTIVE PROJECTS
+// =========================
+
+const projectButtons = document.querySelectorAll(".project-btn");
+
+projectButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+
+        const project = button.parentElement;
+        const details = project.querySelector(".project-details");
+
+        details.classList.toggle("visible");
+
+        if (details.classList.contains("visible")) {
+            button.textContent = "Hide Details";
+        } else {
+            button.textContent = "Show Details";
+        }
+    });
+});
