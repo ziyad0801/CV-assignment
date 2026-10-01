@@ -181,6 +181,27 @@ footer {
     display: none;
 }
 
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.toggle-btn {
+    background-color: #0D9488;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.toggle-btn:hover {
+    background-color: #0F766E;
+}
+
 .toggle-btn, #addSkillBtn, #contactForm button {
     background: #0D9488;
     color: white;
