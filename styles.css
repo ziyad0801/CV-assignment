@@ -172,6 +172,7 @@ footer {
     }
 }
 
+
 /* Assignment 2 JavaScript Features */
 .welcome-message {
     background: #0D9488;
@@ -214,6 +215,35 @@ footer {
 
 .toggle-btn:hover, #addSkillBtn:hover, #contactForm button:hover {
     opacity: 0.85;
+}
+
+.skill-input {
+    margin-top: 18px;
+    display: flex;
+    gap: 8px;
+}
+
+.skill-input input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.skill-input button {
+    background-color: #0D9488;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.skill-input button:hover {
+    background-color: #0F766E;
 }
 
 #contactForm {
@@ -273,15 +303,11 @@ body.dark-mode .project-summary {
     top: 15px;
     right: 15px;
     z-index: 1000;
-
     background-color: #0D9488;
     color: white;
-
     border: none;
     border-radius: 6px;
-
     padding: 9px 14px;
-
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: bold;

@@ -105,38 +105,56 @@
             <div id="skills-content">
 
             <div class="skills-grid">
-                <div>
+                <div class="skill-column">
                     <h3>Technical Skills</h3>
-                    <ul>
+
+                    <ul id="technical-skills">
                         <li>HTML5</li>
-                        <li>Phython</li>
+                        <li>Python</li>
                         <li>JavaScript – Basic</li>
                         <li>Front End Coding</li>
                         <li>Microsoft Office</li>
                         <li>Usability testing</li>
                     </ul>
-                    <input id="newSkill" type="text" placeholder="Enter skill">
-                    <button id="addSkillBtn" type="button">Add Skill</button>
+
+                    <div class="skill-input">
+                        <input type="text" id="technical-input" placeholder="Add technical skill">
+                        <button type="button" onclick="addSkill('technical')">Add</button>
+                    </div>
                 </div>
 
-                <div>
+
+                <div class="skill-column">
                     <h3>Soft Skills</h3>
-                    <ul>
+
+                    <ul id="soft-skills">
                         <li>Teamwork</li>
                         <li>Communication</li>
                         <li>Empathy</li>
                         <li>User centered thinking</li>
                         <li>Time Management</li>
                     </ul>
+
+                    <div class="skill-input">
+                        <input type="text" id="soft-input" placeholder="Add soft skill">
+                        <button type="button" onclick="addSkill('soft')">Add</button>
+                    </div>
                 </div>
 
-                <div>
+
+                <div class="skill-column">
                     <h3>Languages</h3>
-                    <ul>
+
+                    <ul id="languages">
                         <li>German – Mother tongue</li>
                         <li>English – Fluent</li>
                         <li>Arabic – Intermediate</li>
                     </ul>
+
+                    <div class="skill-input">
+                        <input type="text" id="language-input" placeholder="Add language">
+                        <button type="button" onclick="addSkill('language')">Add</button>
+                    </div>
                 </div>
             </div>
             </div>

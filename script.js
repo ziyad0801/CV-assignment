@@ -95,3 +95,37 @@ projectButtons.forEach(function(button) {
         }
     });
 });
+
+function addSkill(type) {
+
+    let input;
+    let list;
+
+    if (type === "technical") {
+        input = document.getElementById("technical-input");
+        list = document.getElementById("technical-skills");
+    }
+
+    if (type === "soft") {
+        input = document.getElementById("soft-input");
+        list = document.getElementById("soft-skills");
+    }
+
+    if (type === "language") {
+        input = document.getElementById("language-input");
+        list = document.getElementById("languages");
+    }
+
+    const value = input.value.trim();
+
+    if (value === "") {
+        return;
+    }
+
+    const newItem = document.createElement("li");
+    newItem.textContent = value;
+
+    list.appendChild(newItem);
+
+    input.value = "";
+}
