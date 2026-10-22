@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function () {
             container.innerHTML = "";
 
             const response = await fetch(
-                "https://api.github.com/users/XYZ123/repos"
+                "https://api.github.com/users/ziyad0801/repos"
             );
 
             if (!response.ok) {
