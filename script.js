@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         welcome.style.display = "block";
     }
 
-
+    
     // =====================================================
     // OPTION 2 - SHOW / HIDE SECTIONS
     // Skills, Projects and Certifications
@@ -227,4 +227,70 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    async function loadGitHubProjects() {
+
+        const loading = document.getElementById("github-loading");
+        const error = document.getElementById("github-error");
+        const container = document.getElementById("github-repositories");
+
+        try {
+
+            loading.style.display = "block";
+            error.textContent = "";
+            container.innerHTML = "";
+
+            const response = await fetch(
+                "https://api.github.com/users/ziyad0801/repos?sort=updated&per_page=6"
+            );
+
+            if (!response.ok) {
+                throw new Error("Failed to load GitHub repositories.");
+            }
+
+            const repositories = await response.json();
+
+            loading.style.display = "none";
+
+            repositories.forEach(function (repo) {
+
+                const card = document.createElement("article");
+
+                card.className = "github-card";
+
+                card.innerHTML = `
+                    <h3>${repo.name}</h3>
+
+                    <p>
+                        ${repo.description || "No description available."}
+                    </p>
+
+                    <p>
+                        <strong>Language:</strong>
+                        ${repo.language || "Not specified"}
+                    </p>
+
+                    <p>
+                        <strong>Stars:</strong>
+                        ${repo.stargazers_count}
+                    </p>
+
+                    <a href="${repo.html_url}" target="_blank">
+                        View on GitHub
+                    </a>
+                `;
+
+                container.appendChild(card);
+
+            });
+
+        } catch (err) {
+
+            loading.style.display = "none";
+
+            error.textContent =
+                "Unable to load GitHub projects. Please try again later.";
+
+        }
+    }
+    loadGitHubProjects();
 });

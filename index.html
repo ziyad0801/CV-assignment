@@ -12,6 +12,12 @@
 </head>
 
 <body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
     <button id="dark-mode-btn" type="button">
     Dark Mode
     </button>
@@ -52,7 +58,7 @@
         <!-- =========================
              PROFILE / SHORT BIO
              ========================= -->
-        <section id="profile">
+        <section id="home">
             <h2>Profile</h2>
             <p>
                 I am a motivated university student with an interest in Human-Technology-Interaction,
@@ -230,6 +236,28 @@
             </article>
             
         </div>
+        </section>
+        
+        <section id="github-projects">
+
+            <div class="section-header">
+                <h2>GitHub Projects</h2>
+            </div>
+
+            <p>
+                My latest public repositories from GitHub.
+            </p>
+
+            <div id="github-loading">
+                Loading GitHub projects...
+            </div>
+
+            <div id="github-error" class="error"></div>
+
+            <div id="github-repositories">
+                <!-- GitHub repositories will appear here -->
+            </div>
+
         </section>
 
         <!-- =========================
